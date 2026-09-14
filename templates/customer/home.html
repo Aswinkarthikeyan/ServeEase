@@ -1,0 +1,1079 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ServeEase - Home Services</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body class="customer-page">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand fw-bold"
+            href="{% url 'customer_home' %}"
+        >
+            Serve<span>Ease</span>
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#customerNavbar"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="customerNavbar"
+        >
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="{% url 'customer_home' %}"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#services"
+                    >
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <button
+                        class="nav-link"
+                        type="button"
+                        id="customerOrdersButton"
+                    >
+                        Orders
+                    </button>
+                </li>
+
+            </ul>
+
+
+            <button
+                type="button"
+                class="profile-btn"
+                id="customerProfileButton"
+            >
+
+                <span class="profile-icon">
+                    👤
+                </span>
+
+                <span class="profile-btn-text">
+                    Profile
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="customer-hero">
+
+    <div class="container">
+
+        <div class="customer-hero-content">
+
+            <p class="hero-small-text">
+                LOCAL HOME SERVICES
+            </p>
+
+            <h1>
+                Find. Compare. <span>Book.</span>
+            </h1>
+
+            <p>
+                Find trusted local professionals for your home service needs.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <form
+                method="GET"
+                class="service-search"
+            >
+
+                <div class="search-field">
+
+                    <label>
+                        Location
+                    </label>
+
+                    <select name="city">
+
+                        <option value="">
+                            Select City
+                        </option>
+
+                        <option
+                            value="Chennai"
+                            {% if selected_city == 'Chennai' %}selected{% endif %}
+                        >
+                            Chennai
+                        </option>
+
+                        <option
+                            value="Madurai"
+                            {% if selected_city == 'Madurai' %}selected{% endif %}
+                        >
+                            Madurai
+                        </option>
+
+                        <option
+                            value="Coimbatore"
+                            {% if selected_city == 'Coimbatore' %}selected{% endif %}
+                        >
+                            Coimbatore
+                        </option>
+
+                        <option
+                            value="Trichy"
+                            {% if selected_city == 'Trichy' %}selected{% endif %}
+                        >
+                            Trichy
+                        </option>
+
+                        <option
+                            value="Bangalore"
+                            {% if selected_city == 'Bangalore' %}selected{% endif %}
+                        >
+                            Bangalore
+                        </option>
+
+                        <option
+                            value="Hyderabad"
+                            {% if selected_city == 'Hyderabad' %}selected{% endif %}
+                        >
+                            Hyderabad
+                        </option>
+
+                        <option
+                            value="Kochi"
+                            {% if selected_city == 'Kochi' %}selected{% endif %}
+                        >
+                            Kochi
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="search-field">
+
+                    <label>
+                        Service
+                    </label>
+
+                    <select name="service">
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option
+                            value="Carpenter"
+                            {% if selected_service == 'Carpenter' %}selected{% endif %}
+                        >
+                            Carpenter
+                        </option>
+
+                        <option
+                            value="Electrician"
+                            {% if selected_service == 'Electrician' %}selected{% endif %}
+                        >
+                            Electrician
+                        </option>
+
+                        <option
+                            value="AC Technician"
+                            {% if selected_service == 'AC Technician' %}selected{% endif %}
+                        >
+                            AC Technician
+                        </option>
+
+                        <option
+                            value="Mechanic"
+                            {% if selected_service == 'Mechanic' %}selected{% endif %}
+                        >
+                            Mechanic
+                        </option>
+
+                        <option
+                            value="Plumber"
+                            {% if selected_service == 'Plumber' %}selected{% endif %}
+                        >
+                            Plumber
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="search-btn"
+                >
+                    Find Professionals
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section
+    class="services-section"
+    id="services"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p>
+                OUR SERVICES
+            </p>
+
+            <h2>
+                Professional Services
+            </h2>
+
+            <span>
+                Choose the service you need and find an approved professional.
+            </span>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <a
+                href="?service=Carpenter{% if selected_city %}&city={{ selected_city }}{% endif %}"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+                    🪚
+                </div>
+
+                <h3>
+                    Carpenter
+                </h3>
+
+                <p>
+                    Furniture and woodwork
+                </p>
+
+            </a>
+
+
+            <a
+                href="?service=Electrician{% if selected_city %}&city={{ selected_city }}{% endif %}"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Electrician
+                </h3>
+
+                <p>
+                    Electrical services
+                </p>
+
+            </a>
+
+
+            <a
+                href="?service=AC Technician{% if selected_city %}&city={{ selected_city }}{% endif %}"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+                    ❄️
+                </div>
+
+                <h3>
+                    AC Technician
+                </h3>
+
+                <p>
+                    AC service and repair
+                </p>
+
+            </a>
+
+
+            <a
+                href="?service=Mechanic{% if selected_city %}&city={{ selected_city }}{% endif %}"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Mechanic
+                </h3>
+
+                <p>
+                    Vehicle assistance
+                </p>
+
+            </a>
+
+
+            <a
+                href="?service=Plumber{% if selected_city %}&city={{ selected_city }}{% endif %}"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+                    🚰
+                </div>
+
+                <h3>
+                    Plumber
+                </h3>
+
+                <p>
+                    Plumbing services
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFESSIONALS ================= -->
+
+<section class="professionals-section">
+
+    <div class="container">
+
+        <div class="section-heading left-heading">
+
+            <p>
+                AVAILABLE PROFESSIONALS
+            </p>
+
+            <h2>
+                Find Your Professional
+            </h2>
+
+        </div>
+
+
+        {% if professionals %}
+
+            <div class="professionals-grid">
+
+                {% for professional in professionals %}
+
+                    <div class="professional-card">
+
+                        <div class="professional-card-image">
+
+                            {% if professional.profile_image %}
+
+                                <img
+                                    src="{{ professional.profile_image }}"
+                                    alt="{{ professional.professional_type }}"
+                                >
+
+                            {% else %}
+
+                                <div class="default-professional-image">
+                                    👨‍🔧
+                                </div>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="professional-card-content">
+
+                            <span class="professional-category">
+                                {{ professional.professional_type }}
+                            </span>
+
+                            <h3>
+                                {{ professional.name }}
+                            </h3>
+
+
+                            <div class="professional-card-info">
+
+                                <div>
+                                    <span>Experience</span>
+                                    <strong>
+                                        {{ professional.experience }} Years
+                                    </strong>
+                                </div>
+
+
+                                <div>
+                                    <span>Location</span>
+                                    <strong>
+                                        {{ professional.location }}
+                                    </strong>
+                                </div>
+
+
+                                <div>
+                                    <span>Hourly Charge</span>
+                                    <strong>
+                                        ₹{{ professional.hourly_charge }}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="book-now-btn"
+                                data-professional-id="{{ professional.id }}"
+                                data-professional-name="{{ professional.name }}"
+                                data-booked-slots-url="{% url 'get_booked_slots' %}"
+                            >
+                                Book Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+
+        {% else %}
+
+            <div class="no-professionals">
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    No professionals found
+                </h3>
+
+                <p>
+                    Try selecting another city or service.
+                </p>
+
+                <a
+                    href="{% url 'customer_home' %}"
+                    class="secondary-btn"
+                >
+                    View All Professionals
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<!-- ================= URGENT SERVICE ================= -->
+
+<section class="urgent-section">
+
+    <div class="container">
+
+        <div class="urgent-box">
+
+            <div>
+
+                <p>
+                    NEED HELP TODAY?
+                </p>
+
+                <h2>
+                    Need a service today?
+                </h2>
+
+                <span>
+                    For urgent or emergency requirements, please call our
+                    support team.
+                </span>
+
+            </div>
+
+            <a
+                href="tel:XXXXXXXXXX"
+                class="urgent-btn"
+            >
+                Call Support
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <h3>
+                Serve<span>Ease</span>
+            </h3>
+
+            <p>
+                Find. Compare. Book.
+            </p>
+
+            <p class="copyright">
+                © 2026 ServeEase. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= BOOKING MODAL ================= -->
+
+<div
+    class="custom-modal"
+    id="bookingModal"
+>
+
+    <div class="custom-modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeBooking"
+        >
+            &times;
+        </button>
+
+
+        <div class="modal-heading">
+
+            <p>
+                SERVEEASE BOOKING
+            </p>
+
+            <h2>
+                Book Professional
+            </h2>
+
+            <span id="bookingProfessionalName"></span>
+
+        </div>
+
+
+        <form
+            method="POST"
+            action="{% url 'create_order' %}"
+            id="bookingForm"
+        >
+
+            {% csrf_token %}
+
+            <input
+                type="hidden"
+                name="professional_id"
+                id="professionalId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Booking Date
+                </label>
+
+                <input
+                    type="date"
+                    name="booking_date"
+                    id="bookingDate"
+                    required
+                >
+
+                <small>
+                    Same-day booking is not available.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Time Slot
+                </label>
+
+                <select
+                    name="time_slot"
+                    id="timeSlot"
+                    required
+                >
+
+                    <option value="">
+                        Select Time Slot
+                    </option>
+
+                    <option value="8-10 AM">
+                        8-10 AM
+                    </option>
+
+                    <option value="10-12 PM">
+                        10-12 PM
+                    </option>
+
+                    <option value="12-2 PM">
+                        12-2 PM
+                    </option>
+
+                    <option value="2-4 PM">
+                        2-4 PM
+                    </option>
+
+                    <option value="4-6 PM">
+                        4-6 PM
+                    </option>
+
+                    <option value="6-8 PM">
+                        6-8 PM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Language
+                </label>
+
+                <select
+                    name="language"
+                    required
+                >
+
+                    <option value="">
+                        Select Language
+                    </option>
+
+                    <option value="Tamil">
+                        Tamil
+                    </option>
+
+                    <option value="English">
+                        English
+                    </option>
+
+                    <option value="Hindi">
+                        Hindi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="slot-message"
+                id="slotMessage"
+            ></div>
+
+
+            <button
+                type="submit"
+                class="primary-btn full-width"
+            >
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CUSTOMER PROFILE MODAL ================= -->
+
+<div
+    class="custom-modal"
+    id="customerProfileModal"
+>
+
+    <div class="custom-modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeCustomerProfile"
+        >
+            &times;
+        </button>
+
+
+        <div class="modal-heading">
+
+            <div class="modal-profile-icon">
+                👤
+            </div>
+
+            <h2>
+                My Profile
+            </h2>
+
+        </div>
+
+
+        <div class="profile-modal-details">
+
+            <div>
+                <span>Name</span>
+                <strong>
+                    {{ request.user.customer.name }}
+                </strong>
+            </div>
+
+            <div>
+                <span>Mobile</span>
+                <strong>
+                    {{ request.user.customer.mobile }}
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="customerEditProfileButton"
+            >
+                Edit Profile
+            </button>
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="customerOrdersButtonModal"
+            >
+                Orders
+            </button>
+
+            <a
+                href="{% url 'customer_logout' %}"
+                class="danger-btn"
+            >
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= EDIT CUSTOMER PROFILE ================= -->
+
+<div
+    class="custom-modal"
+    id="customerEditProfileModal"
+>
+
+    <div class="custom-modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeCustomerEditProfile"
+        >
+            &times;
+        </button>
+
+
+        <div class="modal-heading">
+
+            <h2>
+                Edit Profile
+            </h2>
+
+        </div>
+
+
+        <form
+            method="POST"
+            action="{% url 'customer_edit_profile' %}"
+        >
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label>
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    value="{{ request.user.customer.name }}"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mobile
+                </label>
+
+                <input
+                    type="text"
+                    name="mobile"
+                    value="{{ request.user.customer.mobile }}"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-btn full-width"
+            >
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CUSTOMER ORDERS ================= -->
+
+<div
+    class="custom-modal"
+    id="customerOrdersModal"
+>
+
+    <div class="custom-modal-box orders-modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeCustomerOrders"
+        >
+            &times;
+        </button>
+
+
+        <div class="modal-heading">
+
+            <h2>
+                My Orders
+            </h2>
+
+            <p>
+                Track your service bookings.
+            </p>
+
+        </div>
+
+
+        <div class="customer-orders-list">
+
+            {% if customer_orders %}
+
+                {% for order in customer_orders %}
+
+                    <div class="customer-order-card">
+
+                        <div class="order-card-top">
+
+                            <div>
+
+                                <h3>
+                                    {{ order.professional.name }}
+                                </h3>
+
+                                <span>
+                                    {{ order.professional.professional_type }}
+                                </span>
+
+                            </div>
+
+
+                            <span
+                                class="status-badge status-{{ order.status|lower }}"
+                            >
+                                {{ order.status }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="order-card-details">
+
+                            <div>
+                                <span>Location</span>
+                                <strong>
+                                    {{ order.professional.location }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Date</span>
+                                <strong>
+                                    {{ order.booking_date }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Time</span>
+                                <strong>
+                                    {{ order.time_slot }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Language</span>
+                                <strong>
+                                    {{ order.language }}
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="empty-orders">
+
+                    <div>
+                        📦
+                    </div>
+
+                    <h3>
+                        No Orders Yet
+                    </h3>
+
+                    <p>
+                        Your bookings will appear here.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/app.js' %}"></script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
+
+</body>
+
+</html>

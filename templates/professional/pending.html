@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ServeEase - Application Pending</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body class="pending-page">
+
+    <div class="pending-wrapper">
+
+        <div class="pending-card">
+
+            <div class="pending-logo">
+                Serve<span>Ease</span>
+            </div>
+
+            <div class="pending-icon">
+                ⏳
+            </div>
+
+            <p class="hero-small-text">
+                PROFESSIONAL APPLICATION
+            </p>
+
+            <h1>
+                Application Received
+            </h1>
+
+            <p>
+                Hi <strong>{{ professional.name }}</strong>,
+                your professional registration has been successfully received.
+            </p>
+
+            <p>
+                Our team will review your details and schedule an
+                <strong>online interview</strong>.
+            </p>
+
+            <p>
+                We will contact you shortly with the next steps.
+            </p>
+
+            <div class="pending-status">
+                Status: <strong>Pending Approval</strong>
+            </div>
+
+            <a
+                href="{% url 'login' %}"
+                class="primary-btn"
+            >
+                Back to Login
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

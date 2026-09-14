@@ -1,0 +1,741 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ServeEase - Professional</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body class="professional-page">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand fw-bold"
+            href="{% url 'professional_home' %}"
+        >
+            Serve<span>Ease</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#professionalNavbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="professionalNavbar"
+        >
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="{% url 'professional_home' %}"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#guidelines"
+                    >
+                        Guidelines
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <button
+                        type="button"
+                        class="nav-link professional-orders-btn"
+                        id="professionalOrdersButton"
+                    >
+
+                        Orders
+
+                        {% if pending_orders_count > 0 %}
+
+                            <span class="order-count">
+                                {{ pending_orders_count }}
+                            </span>
+
+                        {% endif %}
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+            <button
+                type="button"
+                class="profile-btn"
+                id="professionalProfileButton"
+            >
+
+                <span class="profile-icon">
+                    👤
+                </span>
+
+                <span class="profile-btn-text">
+                    Profile
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="professional-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <p class="hero-small-text">
+                SERVEEASE PROFESSIONAL
+            </p>
+
+            <h1>
+                Welcome,
+                <span>{{ professional.name }}</span>
+            </h1>
+
+            <p>
+                Manage your service requests, bookings and professional profile
+                from one place.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFESSIONAL CARD ================= -->
+
+<section class="professional-section">
+
+    <div class="container">
+
+        <div class="professional-main-card">
+
+            <div class="professional-image-wrapper">
+
+                {% if professional.profile_image %}
+
+                    <img
+                        src="{{ professional.profile_image }}"
+                        alt="{{ professional.professional_type }}"
+                        class="professional-profile-image"
+                    >
+
+                {% else %}
+
+                    <div class="default-professional-image">
+                        👨‍🔧
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="professional-details">
+
+                <p class="card-label">
+                    PROFESSIONAL PROFILE
+                </p>
+
+                <h2>
+                    {{ professional.name }}
+                </h2>
+
+                <p class="professional-type">
+                    {{ professional.professional_type }}
+                </p>
+
+                <div class="professional-info-grid">
+
+                    <div>
+                        <small>Experience</small>
+                        <strong>
+                            {{ professional.experience }} Years
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Location</small>
+                        <strong>
+                            {{ professional.location }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Hourly Charge</small>
+                        <strong>
+                            ₹{{ professional.hourly_charge }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Mobile</small>
+                        <strong>
+                            {{ professional.mobile }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GUIDELINES ================= -->
+
+<section
+    class="guidelines-section"
+    id="guidelines"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p>
+                PROFESSIONAL GUIDELINES
+            </p>
+
+            <h2>
+                Deliver Better. Serve Better.
+            </h2>
+
+            <span>
+                Follow these guidelines to provide a reliable and professional
+                experience to every customer.
+            </span>
+
+        </div>
+
+
+        <div class="guidelines-grid">
+
+            <div class="guideline-card">
+                <div class="guideline-icon">⏰</div>
+                <h3>Be Punctual</h3>
+                <p>
+                    Reach the customer's location within the booked time slot.
+                </p>
+            </div>
+
+
+            <div class="guideline-card">
+                <div class="guideline-icon">📋</div>
+                <h3>Confirm Requirements</h3>
+                <p>
+                    Understand the customer's requirements before starting work.
+                </p>
+            </div>
+
+
+            <div class="guideline-card">
+                <div class="guideline-icon">🧰</div>
+                <h3>Carry Your Tools</h3>
+                <p>
+                    Make sure you carry the necessary tools for the service.
+                </p>
+            </div>
+
+
+            <div class="guideline-card">
+                <div class="guideline-icon">🤝</div>
+                <h3>Professional Behaviour</h3>
+                <p>
+                    Always communicate respectfully with customers.
+                </p>
+            </div>
+
+
+            <div class="guideline-card">
+                <div class="guideline-icon">💰</div>
+                <h3>Explain Charges</h3>
+                <p>
+                    Clearly communicate charges before beginning additional work.
+                </p>
+            </div>
+
+
+            <div class="guideline-card">
+                <div class="guideline-icon">🔐</div>
+                <h3>Respect Privacy</h3>
+                <p>
+                    Protect customer information and maintain privacy.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <h3>
+                Serve<span>Ease</span>
+            </h3>
+
+            <p>
+                Find. Compare. Book.
+            </p>
+
+            <p class="copyright">
+                © 2026 ServeEase. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= PROFILE MODAL ================= -->
+
+<div
+    class="custom-modal"
+    id="professionalProfileModal"
+>
+
+    <div class="custom-modal-box">
+
+        <button
+            class="modal-close"
+            id="closeProfessionalProfile"
+        >
+            &times;
+        </button>
+
+        <div class="modal-heading">
+
+            <div class="modal-profile-icon">
+                👤
+            </div>
+
+            <h2>
+                My Profile
+            </h2>
+
+        </div>
+
+
+        <div class="profile-modal-details">
+
+            <div>
+                <span>Name</span>
+                <strong>{{ professional.name }}</strong>
+            </div>
+
+            <div>
+                <span>Mobile</span>
+                <strong>{{ professional.mobile }}</strong>
+            </div>
+
+            <div>
+                <span>Profession</span>
+                <strong>{{ professional.professional_type }}</strong>
+            </div>
+
+            <div>
+                <span>Experience</span>
+                <strong>{{ professional.experience }} Years</strong>
+            </div>
+
+            <div>
+                <span>Location</span>
+                <strong>{{ professional.location }}</strong>
+            </div>
+
+            <div>
+                <span>Hourly Charge</span>
+                <strong>₹{{ professional.hourly_charge }}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="professionalEditProfileButton"
+            >
+                Edit Profile
+            </button>
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="professionalOrdersButtonModal"
+            >
+                Orders
+            </button>
+
+            <a
+                href="{% url 'professional_logout' %}"
+                class="danger-btn"
+            >
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= EDIT PROFILE MODAL ================= -->
+
+<div
+    class="custom-modal"
+    id="professionalEditProfileModal"
+>
+
+    <div class="custom-modal-box">
+
+        <button
+            class="modal-close"
+            id="closeProfessionalEditProfile"
+        >
+            &times;
+        </button>
+
+        <div class="modal-heading">
+
+            <h2>
+                Edit Profile
+            </h2>
+
+        </div>
+
+
+        <form
+            method="POST"
+            action="{% url 'professional_edit_profile' %}"
+        >
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    value="{{ professional.name }}"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Mobile</label>
+                <input
+                    type="text"
+                    name="mobile"
+                    value="{{ professional.mobile }}"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label>Professional Type</label>
+
+                <select
+                    name="professional_type"
+                    required
+                >
+
+                    {% for value, label in professional.PROFESSIONAL_TYPES %}
+
+                        <option
+                            value="{{ value }}"
+                            {% if professional.professional_type == value %}
+                                selected
+                            {% endif %}
+                        >
+                            {{ label }}
+                        </option>
+
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Experience</label>
+
+                <input
+                    type="number"
+                    name="experience"
+                    min="0"
+                    value="{{ professional.experience }}"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    name="location"
+                    value="{{ professional.location }}"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Hourly Charge</label>
+
+                <input
+                    type="number"
+                    name="hourly_charge"
+                    min="0"
+                    step="0.01"
+                    value="{{ professional.hourly_charge }}"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-btn full-width"
+            >
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ORDERS MODAL ================= -->
+
+<div
+    class="custom-modal"
+    id="professionalOrdersModal"
+>
+
+    <div class="custom-modal-box orders-modal-box">
+
+        <button
+            class="modal-close"
+            id="closeProfessionalOrders"
+        >
+            &times;
+        </button>
+
+        <div class="modal-heading">
+
+            <h2>
+                Customer Orders
+            </h2>
+
+            <p>
+                Manage your service requests.
+            </p>
+
+        </div>
+
+
+        <div class="professional-orders-list">
+
+            {% if orders %}
+
+                {% for order in orders %}
+
+                    <div class="professional-order-card">
+
+                        <div class="order-card-top">
+
+                            <div>
+
+                                <h3>
+                                    {{ order.customer.name }}
+                                </h3>
+
+                                <span>
+                                    {{ order.customer.mobile }}
+                                </span>
+
+                            </div>
+
+
+                            <span
+                                class="status-badge status-{{ order.status|lower }}"
+                            >
+                                {{ order.status }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="order-card-details">
+
+                            <div>
+                                <span>Location</span>
+                                <strong>
+                                    {{ order.professional.location }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Date</span>
+                                <strong>
+                                    {{ order.booking_date }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Time</span>
+                                <strong>
+                                    {{ order.time_slot }}
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Language</span>
+                                <strong>
+                                    {{ order.language }}
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        {% if order.status == 'Pending' %}
+
+                            <div class="order-actions">
+
+                                <a
+                                    href="{% url 'update_order' order.id 'approve' %}"
+                                    class="approve-btn"
+                                >
+                                    Approve
+                                </a>
+
+                                <a
+                                    href="{% url 'update_order' order.id 'reject' %}"
+                                    class="reject-btn"
+                                >
+                                    Reject
+                                </a>
+
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="empty-orders">
+
+                    <div>
+                        📦
+                    </div>
+
+                    <h3>
+                        No Orders Yet
+                    </h3>
+
+                    <p>
+                        Customer service requests will appear here.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/app.js' %}"></script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
+
+</body>
+
+</html>

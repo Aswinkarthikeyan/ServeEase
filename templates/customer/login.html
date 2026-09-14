@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ServeEase - Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body class="auth-page">
+
+
+    <nav class="nav">
+
+        <div class="wrap navin">
+
+            <a href="{% url 'login' %}" class="logo">
+                Serve<span>Ease</span>
+            </a>
+
+            <a
+                href="{% url 'register' %}"
+                class="btn secondary"
+            >
+                Register
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="auth-main">
+
+        <div class="auth-container">
+
+            <div class="auth-card login-card">
+
+                <div class="auth-header">
+
+                    <div class="pill">
+                        Welcome Back
+                    </div>
+
+                    <h1>
+                        Login to ServeEase
+                    </h1>
+
+                    <p>
+                        Access your account and manage your services.
+                    </p>
+
+                </div>
+
+
+                {% if error %}
+
+                    <div class="form-error">
+                        {{ error }}
+                    </div>
+
+                {% endif %}
+
+
+                <form
+                    method="POST"
+                    class="form"
+                >
+
+                    {% csrf_token %}
+
+
+                    <div class="field">
+
+                        <label for="mobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            name="mobile"
+                            id="mobile"
+                            placeholder="Enter mobile number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn primary full-btn"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="auth-footer">
+
+                    Don't have an account?
+
+                    <a href="{% url 'register' %}">
+                        Create Account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script
+        src="{% static 'js/app.js' %}"
+        defer>
+    </script>
+
+</body>
+
+</html>

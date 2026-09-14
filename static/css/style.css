@@ -1,0 +1,2285 @@
+/* =========================================================
+   SERVEEASE - OVERALL STYLESHEET
+   Blue Theme
+   Customer + Professional + Auth + Pending
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1180px;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --blue-soft: #f5f9ff;
+
+    --text-dark: #172033;
+    --text: #475569;
+    --text-light: #64748b;
+
+    --border: #e2e8f0;
+    --white: #ffffff;
+    --background: #f8fafc;
+
+    --success: #16a34a;
+    --success-light: #ecfdf3;
+
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+
+    --shadow-sm: 0 4px 15px rgba(15, 23, 42, 0.06);
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   2. NAVBAR
+   ========================================================= */
+
+.navbar {
+    min-height: 72px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.navbar-brand,
+.logo {
+    color: var(--text-dark) !important;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand span,
+.logo span {
+    color: var(--primary);
+}
+
+.navbar .nav-link {
+    color: #475569 !important;
+    font-weight: 500;
+    margin: 0 8px;
+    padding: 8px 12px !important;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary) !important;
+    background: var(--primary-light);
+}
+
+.navbar-toggler {
+    border: 1px solid #dbe3ef;
+    padding: 7px 9px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   3. PROFILE BUTTON
+   ========================================================= */
+
+.profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: var(--primary);
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 9px 16px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.profile-icon {
+    font-size: 17px;
+}
+
+.profile-btn-text {
+    font-size: 14px;
+}
+
+.professional-orders-btn {
+    position: relative;
+}
+
+.order-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    margin-left: 5px;
+
+    border-radius: 50%;
+
+    background: var(--danger);
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   4. BUTTONS
+   ========================================================= */
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.approve-btn,
+.reject-btn {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    padding: 10px 18px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+.secondary-btn:hover {
+    background: #e8eef6;
+    color: var(--text-dark);
+}
+
+.danger-btn {
+    background: var(--danger-light);
+    color: var(--danger);
+    border: 1px solid #fecaca;
+}
+
+.danger-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.approve-btn {
+    background: var(--success-light);
+    color: var(--success);
+    border: 1px solid #bbf7d0;
+}
+
+.approve-btn:hover {
+    background: var(--success);
+    color: white;
+}
+
+.reject-btn {
+    background: var(--danger-light);
+    color: var(--danger);
+    border: 1px solid #fecaca;
+}
+
+.reject-btn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.full-width,
+.full-btn {
+    width: 100%;
+}
+
+
+/* =========================================================
+   5. AUTH PAGES - LOGIN + REGISTER
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 50%,
+            #f8fbff 100%
+        );
+}
+
+.auth-page .nav {
+    height: 72px;
+    background: white;
+    border-bottom: 1px solid #e8eef6;
+}
+
+.auth-page .navin {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-page .logo {
+    font-size: 25px;
+}
+
+.auth-page .btn.secondary {
+    background: white;
+    color: var(--primary);
+    border: 1px solid #bfdbfe;
+
+    padding: 8px 17px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.auth-page .btn.secondary:hover {
+    background: var(--primary-light);
+    border-color: #93c5fd;
+}
+
+
+/* Auth main */
+
+.auth-main {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 560px;
+}
+
+.auth-card {
+    background: white;
+
+    border: 1px solid #e5edf7;
+    border-radius: 18px;
+
+    padding: 38px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+.login-card {
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* Auth heading */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-header .pill {
+    display: inline-block;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    border: 1px solid #dbeafe;
+
+    padding: 6px 12px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 13px;
+}
+
+.auth-header h1 {
+    color: var(--text-dark);
+
+    font-size: 30px;
+    font-weight: 750;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.6px;
+}
+
+.auth-header p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    max-width: 420px;
+    margin: auto;
+}
+
+
+/* Form */
+
+.form {
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field label,
+.form-group label {
+    display: block;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.field input,
+.field select,
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 10px 13px;
+
+    background: white;
+
+    border: 1px solid #d8e0eb;
+    border-radius: 8px;
+
+    color: var(--text-dark);
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.field input::placeholder,
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.field input:focus,
+.field select:focus,
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* Two-column form */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* Professional fields */
+
+.professional-fields {
+    display: none;
+
+    background: #f8fbff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+}
+
+.professional-fields.active {
+    display: block;
+}
+
+.professional-fields .field:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Error */
+
+.form-error {
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 8px;
+
+    padding: 11px 13px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+}
+
+
+/* Auth footer */
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   6. CUSTOMER HERO
+   ========================================================= */
+
+.customer-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #edf5ff 100%
+        );
+
+    padding: 85px 0 90px;
+
+    border-bottom: 1px solid #edf2f7;
+}
+
+.customer-hero-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-small-text {
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.customer-hero h1 {
+    color: var(--text-dark);
+
+    font-size: clamp(40px, 6vw, 64px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+.customer-hero h1 span {
+    color: var(--primary);
+}
+
+.customer-hero-content > p:not(.hero-small-text) {
+    color: var(--text);
+
+    font-size: 17px;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   7. SERVICE SEARCH
+   ========================================================= */
+
+.service-search {
+    background: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border: 1px solid #e1e9f4;
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: left;
+}
+
+.search-field {
+    min-width: 0;
+}
+
+.search-field label {
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #64748b;
+
+    margin: 0 0 4px 4px;
+
+    text-transform: uppercase;
+}
+
+.search-field select {
+    width: 100%;
+
+    height: 46px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    padding: 0 12px;
+
+    color: #334155;
+
+    background: white;
+
+    outline: none;
+}
+
+.search-field select:focus {
+    border-color: #60a5fa;
+}
+
+.search-btn {
+    align-self: end;
+
+    height: 46px;
+
+    padding: 0 22px;
+
+    background: var(--primary);
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.search-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   8. SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+.section-heading > p {
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: var(--text-dark);
+
+    font-size: 32px;
+    font-weight: 750;
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading > span {
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+.left-heading {
+    text-align: left;
+}
+
+
+/* =========================================================
+   9. SERVICES
+   ========================================================= */
+
+.services-section {
+    padding: 85px 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.service-card {
+    background: white;
+
+    border: 1px solid #e4eaf2;
+
+    border-radius: 14px;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    transition: 0.25s ease;
+
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    font-size: 28px;
+}
+
+.service-card h3 {
+    color: var(--text-dark);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.service-card p {
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   10. CUSTOMER PROFESSIONALS
+   ========================================================= */
+
+.professionals-section {
+    padding: 85px 0;
+
+    background: #f8fafc;
+}
+
+.professionals-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.professional-card {
+    background: white;
+
+    border: 1px solid #e3e9f2;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+    transition: 0.25s ease;
+}
+
+.professional-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+.professional-card-image {
+    height: 205px;
+
+    background: #eff6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.professional-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.default-professional-image {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    font-size: 65px;
+}
+
+.professional-card-content {
+    padding: 22px;
+}
+
+.professional-category {
+    display: inline-block;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.professional-card-content h3 {
+    color: var(--text-dark);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    margin: 10px 0 18px;
+}
+
+.professional-card-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+.professional-card-info div {
+    min-width: 0;
+}
+
+.professional-card-info span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+}
+
+.professional-card-info strong {
+    display: block;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+.book-now-btn {
+    width: 100%;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary);
+    color: white;
+
+    padding: 11px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.book-now-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* No professionals */
+
+.no-professionals {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.no-professionals > div {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.no-professionals h3 {
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.no-professionals p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   11. URGENT SERVICE
+   ========================================================= */
+
+.urgent-section {
+    padding: 55px 0;
+
+    background: white;
+}
+
+.urgent-box {
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fbff
+        );
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 16px;
+
+    padding: 35px 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.urgent-box p {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 6px;
+}
+
+.urgent-box h2 {
+    color: var(--text-dark);
+
+    font-size: 25px;
+    font-weight: 750;
+
+    margin-bottom: 5px;
+}
+
+.urgent-box span {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.urgent-btn {
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 11px 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.urgent-btn:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+
+/* =========================================================
+   12. PROFESSIONAL HERO
+   ========================================================= */
+
+.professional-hero {
+    padding: 70px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #edf5ff
+        );
+
+    border-bottom: 1px solid #e5edf7;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.professional-hero h1 {
+    color: var(--text-dark);
+
+    font-size: 45px;
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
+
+    margin-bottom: 10px;
+}
+
+.professional-hero h1 span {
+    color: var(--primary);
+}
+
+.professional-hero .hero-content > p:last-child {
+    color: var(--text);
+
+    font-size: 16px;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   13. PROFESSIONAL PROFILE CARD
+   ========================================================= */
+
+.professional-section {
+    padding: 70px 0;
+
+    background: white;
+}
+
+.professional-main-card {
+    display: grid;
+
+    grid-template-columns: 270px 1fr;
+
+    gap: 35px;
+
+    background: white;
+
+    border: 1px solid #e1e8f1;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.professional-image-wrapper {
+    height: 270px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.professional-profile-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.professional-details {
+    padding: 10px 0;
+}
+
+.card-label {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 8px;
+}
+
+.professional-details h2 {
+    color: var(--text-dark);
+
+    font-size: 30px;
+    font-weight: 750;
+
+    margin-bottom: 4px;
+}
+
+.professional-type {
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.professional-info-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #edf2f7;
+}
+
+.professional-info-grid small {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+}
+
+.professional-info-grid strong {
+    color: #334155;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   14. GUIDELINES
+   ========================================================= */
+
+.guidelines-section {
+    padding: 80px 0;
+
+    background: #f8fafc;
+}
+
+.guidelines-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.guideline-card {
+    background: white;
+
+    border: 1px solid #e3e9f2;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    transition: 0.2s ease;
+}
+
+.guideline-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-sm);
+
+    border-color: #bfdbfe;
+}
+
+.guideline-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    border-radius: 11px;
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+.guideline-card h3 {
+    color: var(--text-dark);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.guideline-card p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   15. FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: #0f172a;
+
+    color: white;
+
+    padding: 42px 0;
+
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 22px;
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.footer-content h3 span {
+    color: #60a5fa;
+}
+
+.footer-content > p:not(.copyright) {
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+.copyright {
+    color: #64748b;
+
+    font-size: 11px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   16. CUSTOM MODALS
+   ========================================================= */
+
+.custom-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(4px);
+}
+
+.custom-modal.show,
+.custom-modal.active {
+    display: flex;
+}
+
+.custom-modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow-lg);
+
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #e2e8f0;
+    color: var(--text-dark);
+}
+
+.modal-heading {
+    margin-bottom: 25px;
+
+    padding-right: 30px;
+}
+
+.modal-heading > p {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 4px;
+}
+
+.modal-heading h2 {
+    color: var(--text-dark);
+
+    font-size: 24px;
+    font-weight: 750;
+
+    margin-bottom: 4px;
+}
+
+.modal-heading span,
+.modal-heading > p + h2 + span {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.modal-profile-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   17. PROFILE MODAL DETAILS
+   ========================================================= */
+
+.profile-modal-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.profile-modal-details > div {
+    background: #f8fafc;
+
+    border: 1px solid #e8edf3;
+
+    border-radius: 9px;
+
+    padding: 12px;
+}
+
+.profile-modal-details span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+}
+
+.profile-modal-details strong {
+    color: #334155;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+.modal-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.modal-buttons .danger-btn {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   18. MODAL FORMS
+   ========================================================= */
+
+.custom-modal .form-group {
+    margin-bottom: 17px;
+}
+
+.custom-modal .form-group small {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+.custom-modal .primary-btn {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   19. BOOKING MODAL
+   ========================================================= */
+
+#bookingModal .custom-modal-box {
+    max-width: 500px;
+}
+
+#bookingDate {
+    cursor: pointer;
+}
+
+#timeSlot option:disabled {
+    color: #94a3b8;
+
+    background: #f1f5f9;
+}
+
+#timeSlot option[value=""] {
+    color: #64748b;
+}
+
+.slot-message {
+    display: none;
+
+    margin-bottom: 15px;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    background: var(--warning-light);
+
+    color: #92400e;
+
+    border: 1px solid #fde68a;
+
+    font-size: 12px;
+}
+
+.slot-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   20. ORDERS MODAL
+   ========================================================= */
+
+.orders-modal-box {
+    max-width: 720px;
+}
+
+.customer-orders-list,
+.professional-orders-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.customer-order-card,
+.professional-order-card {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 17px;
+}
+
+.order-card-top {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+}
+
+.order-card-top h3 {
+    color: var(--text-dark);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 2px;
+}
+
+.order-card-top span:not(.status-badge) {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.order-card-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.order-card-details span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 3px;
+}
+
+.order-card-details strong {
+    color: #334155;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* Status */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.status-pending {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.status-booked {
+    background: #ecfdf3;
+    color: #15803d;
+}
+
+.status-rejected {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* Order actions */
+
+.order-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.order-actions a {
+    flex: 1;
+
+    text-align: center;
+}
+
+
+/* Empty orders */
+
+.empty-orders {
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.empty-orders > div {
+    font-size: 40px;
+
+    margin-bottom: 8px;
+}
+
+.empty-orders h3 {
+    color: var(--text-dark);
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.empty-orders p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   21. PROFESSIONAL PENDING PAGE
+   ========================================================= */
+
+.pending-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #edf5ff
+        );
+}
+
+.pending-wrapper {
+    width: 100%;
+    max-width: 570px;
+}
+
+.pending-card {
+    background: white;
+
+    border: 1px solid #e1e9f4;
+
+    border-radius: 18px;
+
+    padding: 42px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow-lg);
+}
+
+.pending-logo {
+    color: var(--text-dark);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+.pending-logo span {
+    color: var(--primary);
+}
+
+.pending-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 50%;
+
+    font-size: 34px;
+
+    margin: 0 auto 22px;
+}
+
+.pending-card .hero-small-text {
+    margin-bottom: 8px;
+}
+
+.pending-card h1 {
+    color: var(--text-dark);
+
+    font-size: 31px;
+    font-weight: 750;
+
+    margin-bottom: 18px;
+}
+
+.pending-card > p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.pending-card > p strong {
+    color: #334155;
+}
+
+.pending-status {
+    display: inline-block;
+
+    margin: 15px 0 22px;
+
+    padding: 9px 14px;
+
+    border-radius: 50px;
+
+    background: var(--warning-light);
+
+    border: 1px solid #fde68a;
+
+    color: #92400e;
+
+    font-size: 12px;
+}
+
+.pending-card .primary-btn {
+    min-width: 170px;
+}
+
+
+/* =========================================================
+   22. SCROLLBAR
+   ========================================================= */
+
+.custom-modal-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-modal-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-modal-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   23. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .services-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .professionals-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .guidelines-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .professional-main-card {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .professional-image-wrapper {
+        height: 220px;
+    }
+
+    .service-search {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .urgent-box {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   24. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* Navbar */
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .navbar .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navbar-collapse {
+        padding: 12px 0 8px;
+    }
+
+    .navbar-nav {
+        margin-bottom: 10px;
+    }
+
+    .navbar .nav-link {
+        margin: 2px 0;
+    }
+
+    .profile-btn {
+        width: 100%;
+    }
+
+
+    /* Auth */
+
+    .auth-main {
+        padding: 30px 15px;
+    }
+
+    .auth-card {
+        padding: 27px 20px;
+        border-radius: 14px;
+    }
+
+    .auth-header h1 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* Customer Hero */
+
+    .customer-hero {
+        padding: 60px 18px 65px;
+    }
+
+    .customer-hero h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    .customer-hero-content > p:not(.hero-small-text) {
+        font-size: 14px;
+    }
+
+    .service-search {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .search-btn {
+        height: 45px;
+    }
+
+
+    /* Sections */
+
+    .services-section,
+    .professionals-section,
+    .guidelines-section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+
+    /* Services */
+
+    .services-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .service-card {
+        padding: 20px 12px;
+    }
+
+
+    /* Professionals */
+
+    .professionals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .professional-card-image {
+        height: 220px;
+    }
+
+
+    /* Urgent */
+
+    .urgent-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+    .urgent-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* Professional */
+
+    .professional-hero {
+        padding: 55px 20px;
+    }
+
+    .professional-hero h1 {
+        font-size: 36px;
+    }
+
+    .professional-main-card {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+
+        gap: 20px;
+    }
+
+    .professional-image-wrapper {
+        height: 260px;
+    }
+
+    .professional-details h2 {
+        font-size: 26px;
+    }
+
+    .professional-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Modals */
+
+    .custom-modal {
+        padding: 12px;
+    }
+
+    .custom-modal-box {
+        padding: 24px 18px;
+
+        max-height: 94vh;
+
+        border-radius: 14px;
+    }
+
+    .profile-modal-details {
+        grid-template-columns: 1fr;
+    }
+
+    .order-card-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-buttons .danger-btn {
+        grid-column: auto;
+    }
+
+
+    /* Pending */
+
+    .pending-page {
+        padding: 18px;
+    }
+
+    .pending-card {
+        padding: 30px 20px;
+    }
+
+    .pending-card h1 {
+        font-size: 26px;
+    }
+}
+
+
+/* =========================================================
+   25. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .auth-card {
+        padding: 25px 17px;
+    }
+
+    .auth-header h1 {
+        font-size: 23px;
+    }
+
+    .customer-hero h1 {
+        font-size: 36px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .professional-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .professional-card-info {
+        grid-template-columns: 1fr;
+    }
+
+    .order-card-details {
+        grid-template-columns: 1fr;
+    }
+
+    .order-card-top {
+        flex-direction: column;
+    }
+
+    .pending-card {
+        padding: 27px 17px;
+    }
+
+    .pending-card h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   26. ACCESSIBILITY / INTERACTION
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.18);
+    outline-offset: 2px;
+}
+
+
+/* Prevent background scroll when modal is open */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* Disabled buttons */
+
+button:disabled,
+.primary-btn:disabled,
+.book-now-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   END OF SERVEEASE CSS
+   ========================================================= */
